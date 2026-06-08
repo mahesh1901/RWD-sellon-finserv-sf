@@ -21,7 +21,7 @@ public class LoanApplicationTriggerHandler extends TriggerHandlerBase {
     // Fires before new Loan_Application__c records are committed.
     // Good time for: defaults, eligibility checks, duplicate prevention.
     // Records do NOT have an Id yet at this point.
-    @override
+  
     public override void beforeInsert(List<SObject> newList) {
         // Cast once — reuse the typed list
         List<Loan_Application__c> apps =
@@ -42,7 +42,7 @@ public class LoanApplicationTriggerHandler extends TriggerHandlerBase {
     // ── BEFORE UPDATE ─────────────────────────────────────────────────
     // Fires before existing records are updated.
     // Good time for: stage transition validation, computed field recalculation.
-    @override
+ 
     public override void beforeUpdate(List<SObject> newList, Map<Id,SObject> oldMap) {
         List<Loan_Application__c> apps =
             (List<Loan_Application__c>) newList;
@@ -63,7 +63,7 @@ public class LoanApplicationTriggerHandler extends TriggerHandlerBase {
     // Records are now committed — Ids are populated.
     // Good time for: creating related records (Tasks), audit logging,
     // sending notifications.
-    @override
+  
     public override void afterInsert(List<SObject> newList) {
         List<Loan_Application__c> apps =
             (List<Loan_Application__c>) newList;
@@ -82,7 +82,7 @@ public class LoanApplicationTriggerHandler extends TriggerHandlerBase {
     // Fires after records are committed with updated values.
     // KEY PATTERN: filter for only the records that actually changed the
     // relevant field — don't process every updated record unnecessarily.
-    @override
+    
     public override void afterUpdate(List<SObject> newList, Map<Id,SObject> oldMap) {
         List<Loan_Application__c> apps =
             (List<Loan_Application__c>) newList;

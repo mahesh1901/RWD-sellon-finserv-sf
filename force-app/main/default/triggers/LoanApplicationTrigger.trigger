@@ -9,6 +9,7 @@
  * @author       Sellon Finserv Dev Team
  * @created      Day 02 — Apex Framework Sprint
  */
+
 trigger LoanApplicationTrigger on Loan_Application__c (
     before insert, before update, before delete,
     after insert,  after update,  after delete,  after undelete
